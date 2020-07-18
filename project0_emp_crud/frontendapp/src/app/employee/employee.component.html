@@ -1,0 +1,65 @@
+<h1>This is Employee app</h1>
+
+<hr>
+<input type="button" value="Request Django Server" class="btn btn-success m-2" (click)="requestaBak()">
+
+<input type="button" value="Get All Employees" class="btn btn-success m-2" (click)="getEmployees()">
+
+<input type="button" value="Submit Employee Record" class="btn btn-success m-2" data-toggle="modal" data-target="#exampleModal">
+<div class="alert alert-sucess">
+    {{ result }}
+</div>
+
+<div class="container-sm">
+  
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Emp Id</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Project Leader</th>
+                <th>Project Cost</th>
+            </tr>
+
+            <tr *ngFor="let rec of emparray">
+                <td>{{rec.empid}}</td>
+                <td>{{rec.fullname}}</td>
+                <td>{{rec.gender}}</td>
+                <td>{{rec.location}}</td>
+                <td>{{rec.projectleader}}</td>
+                <td>{{rec.projectcost}}</td>
+
+            </tr>
+       
+        </thead>
+    </table>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="Full Name" class="form-control m-2" name="txtEmpName" [(ngModel)]="empObject.fullname">
+          <input type="text" placeholder="Gender" class="form-control m-2" name="txtGender" [(ngModel)]="empObject.gender">
+          <input type="text" placeholder="Location" class="form-control m-2" name="txtLocation" [(ngModel)]="empObject.location">
+          <input type="text" placeholder="Project Leader" class="form-control m-2" name="txtProjectLeader" [(ngModel)]="empObject.projectleader">
+          <input type="text" placeholder="Project Cost" class="form-control m-2" name="txtProjectCost" [(ngModel)]="empObject.projectcost">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="submitEmpRecord()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
