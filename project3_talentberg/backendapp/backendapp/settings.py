@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'course.apps.CourseConfig',
     'enquiry.apps.EnquiryConfig',
     'student.apps.StudentConfig',
-    'trainer.apps.TrainerConfig'
+    'trainer.apps.TrainerConfig',
+    'exam.apps.ExamConfig'
 ]
 
 MIDDLEWARE = [
