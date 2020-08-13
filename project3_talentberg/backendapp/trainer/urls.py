@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import AddTrainerView
 
 
 urlpatterns = [
-    path("create/",views.trainer_create_view,name="trainer.createTrainer")
+    path("create/",AddTrainerView.as_view(),name="trainer.createTrainer")
 ]

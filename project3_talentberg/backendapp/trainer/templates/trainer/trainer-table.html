@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <a href="{% url 'trainer/trainer-form'%}" class="btn border border-primary m-2 float-right">Add Product</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Prod Code</th>
+                    <th>Product</th>
+                    <th>Catagory</th>
+                    <th>Price</th>
+                    <th>Qtys</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- {% for rec in data %}
+                <tr>
+                    <td>{{rec.prodcode}}</td>
+                    <td>{{rec.prodname}}</td>
+                    <td>{{rec.catagory}}</td>
+                    <td>{{rec.price}}</td>
+                    <td>{{rec.qtys}}</td>
+                </tr>
+                {% endfor %} -->
+            </tbody>
+        </table>        
+    </div>
+{% endblock %}
