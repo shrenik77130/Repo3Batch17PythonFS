@@ -28,4 +28,7 @@ class AddTrainerView(CreateView):
    
     def form_valid(self,form):
         print(form.cleaned_data)
+        
+def ShowTrainerView(request):
+    return render(request,'trainer/trainer-table.html')
     

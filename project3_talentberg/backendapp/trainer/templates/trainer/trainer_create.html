@@ -8,7 +8,7 @@
     <div class="col">
         {% if status == 'success' %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Product Record Inserted!</strong>
+            <strong>Trainer Record Inserted!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -20,8 +20,6 @@
 <div class="card">
     <div class="card-header">
 
-
-
         <div class="row">
 
             <div class="col">
@@ -29,7 +27,7 @@
             </div>
 
             <div class="col">
-                <a href="#" class="btn btn-secondary float-right m-2">Show Trainers</a>
+                <a href="{% url 'trainer-show' %}" class="btn btn-secondary float-right m-2">Show Trainers</a>
             </div>
         </div>
     </div>
