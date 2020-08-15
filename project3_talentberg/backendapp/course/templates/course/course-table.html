@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <a href="{% url 'course-create' %}" class="btn border border-primary m-2 float-right">Add Trainer</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Display Name</th>
+                    <th>Duration</th>
+                    <th>Fees</th>
+                    <th>Certification</th>
+                    <th>Corurse Content</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for object in object_list %} 
+                <tr>
+                    <td>{{ object.fkcourseid }}</td>
+                    <td>{{ object.displayname }}</td>
+                    <td>{{ object.duration }}</td>
+                    <td>{{ object.fees }}</td>
+                    <td>{{ object.fkcertificateid }}</td>     
+                    <td>{{ object.course_content }}</td>    
+                    <td><a href="" class="badge badge-primary">Update</a></td>               
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </div>
+{% endblock %}
+
+<!-- {% url 'trainer-update' pk=post.pk %} -->

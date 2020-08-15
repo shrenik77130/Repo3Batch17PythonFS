@@ -16,7 +16,7 @@
         
         {% if status == 'success' %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Trainer Record Inserted!</strong>
+            <strong>Course Record Inserted!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -31,11 +31,11 @@
         <div class="row">
 
             <div class="col">
-                <h3>Create Trainer</h3>
+                <h3>Create Course</h3>
             </div>
 
             <div class="col">
-                <a href="{% url 'trainer-show' %}" class="btn btn-secondary float-right m-2">Show Trainers</a>
+                <a href="{% url 'course-show' %}" class="btn btn-secondary float-right m-2">Show Course</a>
             </div>
         </div>
     </div>
@@ -47,66 +47,32 @@
 
             <div class="row m-1">
                 <div class="form-group col-md-3">
-                    {{form.joindate|as_crispy_field}}
+                    {{form.fkcourseid|as_crispy_field}}
                 </div>                
             </div>
 
             <div class="row m-1">
                 <div class="form-group col-md-2">
-                    {{form.fname|as_crispy_field}}
+                    {{form.displayname|as_crispy_field}}
                 </div>    
                 <div class="form-group col-md-2">
-                    {{form.mname|as_crispy_field}}
+                    {{form.duration|as_crispy_field}}
                 </div> 
                 <div class="form-group col-md-2">
-                    {{form.lname|as_crispy_field}}
+                    {{form.fees|as_crispy_field}}
                 </div>                                             
             </div>    
             
             <div class="row m-1">
                 <div class="col-md-3">
-                    {{form.gender|as_crispy_field}}
+                    {{form.fkcertificateid|as_crispy_field}}
                 </div>
                 <div class="col-md-3">
-                    {{form.dob|as_crispy_field}}
+                    {{form.course_content|as_crispy_field}}
                 </div>                
             </div>
 
-            <div class="row m-1">
-                <div class="col-md-6">
-                    {{form.address|as_crispy_field}}
-                </div>               
-            </div>            
-
-            <div class="row m-1">
-                <div class="col-md-2">
-                    {{form.suburb|as_crispy_field}}
-                </div>
-                <div class="col-md-2">
-                    {{form.city|as_crispy_field}}
-                </div>  
-                <div class="col-md-2">
-                    {{form.pincode|as_crispy_field}}
-                </div>                              
-            </div>  
-            
-            <div class="row m-1">
-                <div class="col-md-2">
-                    {{form.whatsappno|as_crispy_field}}
-                </div>
-                <div class="col-md-4">
-                    {{form.emailid|as_crispy_field}}
-                </div>                
-            </div>            
-
-            <div class="row m-1">
-                <div class="col-md-2">
-                    {{form.qualification|as_crispy_field}}
-                </div>
-                <div class="col-md-4">
-                    {{form.resume|as_crispy_field}}
-                </div>                
-            </div> 
+           
 
             <div class="row m-1">
                 <div class="form-group col-md-6">

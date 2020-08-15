@@ -11,12 +11,24 @@
                     <th>City</th>
                     <th>Email Id</th>
                     <th>Qualification</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
 
             <tbody>
-               
+                {% for object in object_list %} 
+                <tr>
+                    <td>{{ object.fname }}</td>
+                    <td>{{ object.lname }}</td>
+                    <td>{{ object.city }}</td>
+                    <td>{{ object.emailid }}</td>
+                    <td>{{ object.qualification }}</td>     
+                    <td><a href="" class="badge badge-primary">Update</a></td>               
+                </tr>
+                {% endfor %}
             </tbody>
         </table>        
     </div>
 {% endblock %}
+
+<!-- {% url 'trainer-update' pk=post.pk %} -->

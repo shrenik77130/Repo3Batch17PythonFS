@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import AddTrainerView,ShowTrainerView
+from .views import AddTrainerView,ShowTrainerView,UpdateTrainerView
 
 
 urlpatterns = [
     path("create/",AddTrainerView.as_view(),name="trainer-create"),
-    path("show/",ShowTrainerView,name="trainer-show"),
+    path("show/",ShowTrainerView.as_view(),name="trainer-show"),
+    # path("<pk>/update/",UpdateTrainerView.as_view(),name="trainer-update"),
 ]

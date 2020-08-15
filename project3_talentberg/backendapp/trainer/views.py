@@ -1,10 +1,46 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView,UpdateView
+from django.views.generic.list import ListView
 
 from .models import Trainer
 from .forms import TrainerRegistrationForm
 
 
+class AddTrainerView(CreateView):
+    
+    model=Trainer
+    template_name="trainer/trainer_create.html"
+    form_class=TrainerRegistrationForm
+   
+    success_url="/trainer/create"
+    
+        
+class ShowTrainerView(ListView):
+    model=Trainer
+    template_name="trainer/trainer-table.html"
+    
+    # def get_queryset(self, *args, **kwargs): 
+    #     qs = super(GeeksList, self).get_queryset(*args, **kwargs) 
+    #     qs = qs.order_by("-id") 
+    #     return qs     
+    
+class UpdateTrainerView(UpdateView):
+
+    model=Trainer
+    template_name="trainer/trainer_create.html"
+    form_class=TrainerRegistrationForm
+   
+    success_url="/trainer/create"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+'''
 def trainer_create_view(request):
     form = TrainerRegistrationForm()
     
@@ -19,16 +55,4 @@ def trainer_create_view(request):
     context = {"form":form}
     
     return render(request,"trainer/trainer_create.html",context)
-
-class AddTrainerView(CreateView):
-    
-    model=Trainer
-    template_name="trainer/trainer_create.html"
-    form_class=TrainerRegistrationForm
-   
-    def form_valid(self,form):
-        print(form.cleaned_data)
-        
-def ShowTrainerView(request):
-    return render(request,'trainer/trainer-table.html')
-    
+'''    

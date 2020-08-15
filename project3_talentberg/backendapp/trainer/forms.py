@@ -23,13 +23,6 @@ class TrainerRegistrationForm(forms.ModelForm):
             'pincode':forms.TextInput(attrs={'class':'form-control'}),
             'whatsappno':forms.TextInput(attrs={'class':'form-control'}),
             'emailid':forms.EmailInput(attrs={'class':'form-control','type':'email'}),
-            'qualification':forms.TextInput(attrs={'class':'form-control'}),
-            'resume':forms.FileInput(attrs={'type':'file'})
+            'qualification':forms.TextInput(attrs={'class':'form-control'})
         }
-
-    def clean_joindate(self,*args, **kwargs):
-        joindate=self.cleaned_data.get("joindate")
-        
-        if joindate == "":
-            raise forms.ValidationError("This is not Valid Join Date")
         
