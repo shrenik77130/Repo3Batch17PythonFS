@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'chartjs',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,6 +138,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'root')
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_CHART_CONFIG = os.path.join(BASE_DIR, 'chartconfig')
 
 
 MEDIA_URL = '/media/'

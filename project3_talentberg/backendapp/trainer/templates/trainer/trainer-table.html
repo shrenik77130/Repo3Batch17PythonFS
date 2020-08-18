@@ -1,34 +1,42 @@
 {% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-    <div class="container">
-        <a href="{% url 'trainer-create' %}" class="btn border border-primary m-2 float-right">Add Trainer</a>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>City</th>
-                    <th>Email Id</th>
-                    <th>Qualification</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
+<div class="container">
+    <a href="{% url 'trainer-create' %}" class="btn border border-primary m-2 float-right">Add Trainer</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>City</th>
+                <th>Email Id</th>
+                <th>Qualification</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
 
-            <tbody>
-                {% for object in object_list %} 
-                <tr>
-                    <td>{{ object.fname }}</td>
-                    <td>{{ object.lname }}</td>
-                    <td>{{ object.city }}</td>
-                    <td>{{ object.emailid }}</td>
-                    <td>{{ object.qualification }}</td>     
-                    <td><a href="" class="badge badge-primary">Update</a></td>               
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>        
-    </div>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td>{{ object.fname }}</td>
+                <td>{{ object.lname }}</td>
+                <td>{{ object.city }}</td>
+                <td>{{ object.emailid }}</td>
+                <td>{{ object.qualification }}</td>
+                
+                <td>
+                    <a href="/trainer/{{ object.id }}/update" class="badge badge-primary"><img src="{% static 'open-iconic-master/svg/pencil.svg' %}"></a>
+                    <a href="/trainer/{{ object.id }}/delete" class="badge badge-danger"><img src="{% static 'open-iconic-master/svg/trash.svg' %}"></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
 {% endblock %}
 
 <!-- {% url 'trainer-update' pk=post.pk %} -->
